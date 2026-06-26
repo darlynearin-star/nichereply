@@ -1,0 +1,230 @@
+{
+  "niche": "real-estate",
+  "version": "1.0.0",
+  "displayName": "Real Estate Agency",
+  "description": "Property agents, real estate firms, and housing agencies",
+
+  "tone": {
+    "voice": "Professional, helpful, and enthusiastic. Like a knowledgeable realtor excited to show you your dream home.",
+    "formality": "professional",
+    "language": "en"
+  },
+
+  "welcome": {
+    "message": "Welcome to [Agency Name]! 🏠 I'm your property assistant. I can help you find properties, schedule viewings, answer questions about buying/renting, or connect you with an agent. What are you looking for?",
+    "quickReplies": ["Find properties", "Sell my property", "Price list"],
+    "autoTag": "property_inquiry"
+  },
+
+  "faqs": [
+    {
+      "id": "property_types",
+      "keywords": ["property", "type", "kind", "available", "listings", "what do you have"],
+      "question": "What types of properties do you have?",
+      "answer": "We have a wide range of properties:\n🏠 Houses for sale & rent\n🏢 Apartments & condos\n📦 Commercial spaces & shops\n🌆 Land & plots\n🏭 Warehouses & industrial\n\nWhat type are you interested in?",
+      "followUpOptions": ["Houses", "Apartments", "Land", "Commercial"]
+    },
+    {
+      "id": "rent_vs_buy",
+      "keywords": ["rent", "buy", "rental", "purchase", "lease", "own"],
+      "question": "Should I rent or buy?",
+      "answer": "It depends on your situation:\n📋 Renting: Lower upfront cost, flexible, no maintenance worries — great if you're new to an area or need short-term housing.\n🔑 Buying: Build equity, stable payments, your own space — ideal for long-term plans.\n\nWe can help with both! Would you like to see rentals or properties for sale?",
+      "followUpOptions": ["See rentals", "See for sale", "Talk to agent"]
+    },
+    {
+      "id": "pricing_rent",
+      "keywords": ["rent price", "rental cost", "how much rent", "monthly", "rental fee"],
+      "question": "How much does rent cost?",
+      "answer": "Rental prices vary by location and property type:\n🏠 1-bedroom: UGX 500K - 1.5M/month\n🏢 2-bedroom: UGX 800K - 3M/month\n🏡 3-bedroom house: UGX 1.5M - 5M/month\n🏪 Commercial: from UGX 2M/month\n\nWhat's your budget and preferred area?",
+      "followUpOptions": ["Filter by budget", "See available rentals"]
+    },
+    {
+      "id": "buying_process",
+      "keywords": ["buy", "purchase", "process", "steps", "how to buy", "document"],
+      "question": "How does the buying process work?",
+      "answer": "Here's our step-by-step:\n1️⃣ View properties that match your criteria\n2️⃣ Shortlist and schedule viewings\n3️⃣ Make an offer through our agent\n4️⃣ Due diligence (title search, valuation)\n5️⃣ Sign sale agreement & pay deposit\n6️⃣ Transfer & handover\n\nWe guide you through every step!",
+      "followUpOptions": ["Start searching", "Talk to buying agent"]
+    },
+    {
+      "id": "areas",
+      "keywords": ["area", "location", "neighborhood", "place", "zone", "district"],
+      "question": "What areas do you cover?",
+      "answer": "We cover prime locations including:\n📍 Kampala: Kololo, Bukoto, Naguru, Muyenga, Ntinda, Kyambogo\n📍 Wakiso: Entebbe, Kira, Nansana\n📍 Mukono, Jinja, and expanding!\n\nWhich area are you interested in?",
+      "followUpOptions": ["Kampala", "Wakiso/Entebbe", "Other areas"]
+    },
+    {
+      "id": "sell_property",
+      "keywords": ["sell", "listing", "list my", "market", "sell my", "valuation"],
+      "question": "How do I sell my property through you?",
+      "answer": "Selling with us is simple:\n1️⃣ We do a free property valuation\n2️⃣ Professional photos & listing\n3️⃣ Market your property on our platforms\n4️⃣ Screen potential buyers\n5️⃣ Negotiate & close the deal\n\nOur commission is [X]%. Ready to get started?",
+      "followUpOptions": ["Request valuation", "Talk to listing agent"]
+    },
+    {
+      "id": "documents",
+      "keywords": ["document", "paper", "title", "agreement", "contract", "legal"],
+      "question": "What documents do I need?",
+      "answer": "For buying:\n✅ Valid ID (National ID or Passport)\n✅ Proof of income/employment\n✅ Sale agreement (prepared by our lawyers)\n✅ Title/deed search report\n\nFor renting:\n✅ Valid ID\n✅ Rental agreement\n✅ Deposit (typically 3-6 months rent)\n\nWe'll help you prepare everything!",
+      "followUpOptions": ["Talk to legal team", "Start process"]
+    },
+    {
+      "id": "viewing",
+      "keywords": ["view", "seeing", "inspection", "tour", "visit", "show around"],
+      "question": "How do I schedule a viewing?",
+      "answer": "Just let me know:\n1. Which property you're interested in\n2. Your preferred date and time\n3. Your phone number\n\nViewings usually take 30-45 minutes. Our agent will meet you at the property.",
+      "followUpOptions": ["Schedule viewing", "Talk to agent"]
+    },
+    {
+      "id": "investment",
+      "keywords": ["investment", "invest", "roi", "return", "appreciate", "value"],
+      "question": "Is real estate a good investment?",
+      "answer": "Real estate in Uganda has shown strong growth:\n📈 Property values appreciate 10-25% annually in prime areas\n💰 Rental yields of 6-12% per year\n🏗️ Ongoing development in new areas offers early-bird opportunities\n\nWe can help you find investment properties that match your budget.",
+      "followUpOptions": ["Investment properties", "Talk to investment advisor"]
+    },
+    {
+      "id": "fees",
+      "keywords": ["fee", "commission", "charge", "cost", "how much", "agency fee"],
+      "question": "What are your fees?",
+      "answer": "Our fees:\n🏠 For buyers: No fee — we're paid by the seller\n🏡 For tenants: One month's rent as agency fee\n📋 For sellers: [X]% commission of sale price\n📝 For landlords: One month's rent per year\n\nNo hidden charges. We'll explain everything upfront.",
+      "followUpOptions": ["Talk to agent", "Get started"]
+    }
+  ],
+
+  "leadQualification": {
+    "enabled": true,
+    "minimumScore": 40,
+    "questions": [
+      {
+        "id": "name",
+        "field": "name",
+        "question": "What's your name?",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "intent",
+        "field": "intent",
+        "question": "Are you looking to rent, buy, or sell?",
+        "type": "select",
+        "options": ["Rent", "Buy", "Sell", "Just exploring"],
+        "required": true
+      },
+      {
+        "id": "property_type",
+        "field": "property_type",
+        "question": "What type of property are you looking for?",
+        "type": "select",
+        "options": ["House", "Apartment", "Land", "Commercial", "Not sure yet"],
+        "required": true
+      },
+      {
+        "id": "budget",
+        "field": "budget",
+        "question": "What's your budget range?",
+        "type": "select",
+        "options": ["Under 500K/month", "500K - 1M/month", "1M - 3M/month", "3M+ /month", "Under 100M to buy", "100M - 300M to buy", "300M - 500M to buy", "500M+ to buy", "Not sure"],
+        "required": true
+      },
+      {
+        "id": "phone",
+        "field": "phone",
+        "question": "What's your phone number so we can send you listings?",
+        "type": "phone",
+        "required": true
+      }
+    ]
+  },
+
+  "booking": {
+    "enabled": true,
+    "type": "inquiry",
+    "fields": [
+      { "id": "inquiry_type", "label": "What are you interested in?", "type": "select", "options": ["Schedule a viewing", "Property valuation", "List my property", "General inquiry"], "required": true },
+      { "id": "property_type", "label": "Property type", "type": "select", "options": ["House", "Apartment", "Land", "Commercial", "Other"], "required": true },
+      { "id": "location_pref", "label": "Preferred location", "type": "text", "required": false },
+      { "id": "date", "label": "Preferred date", "type": "date", "required": true },
+      { "id": "time", "label": "Preferred time", "type": "time", "required": true }
+    ],
+    "confirmationTemplate": "booking_confirmation"
+  },
+
+  "pricing": {
+    "enabled": true,
+    "triggerKeywords": ["price", "cost", "how much", "fee", "expensive", "cheap", "budget", "afford"],
+    "response": "Our current listings start from:\n🏠 Rentals: UGX 500K/month\n🔑 For sale: from UGX 80M\n📋 Agency fees: one month's rent (rental), [X]% (sales)\n\nBut prices vary widely by location and property type. What's your budget and preferred area? I can share specific listings that match!",
+    "askForContact": true
+  },
+
+  "handoff": {
+    "enabled": true,
+    "triggers": [
+      {
+        "id": "keyword_agent",
+        "triggerType": "keyword",
+        "condition": "message contains 'agent' or 'realtor' or 'human' or 'manager'",
+        "description": "Customer asks to speak with a real estate agent",
+        "message": "Let me connect you with one of our agents who can assist you personally."
+      },
+      {
+        "id": "high_value",
+        "triggerType": "high_value",
+        "condition": "budget over 500M or commercial property inquiry",
+        "description": "High-value lead requires agent attention",
+        "message": "A high-value property requires personal attention from our senior agent. Let me connect you."
+      },
+      {
+        "id": "low_confidence",
+        "triggerType": "low_confidence",
+        "condition": "intent confidence below 0.3 after 3 retries",
+        "description": "Bot cannot understand the client",
+        "message": "I want to make sure you get the right property information. Let me connect you with an agent."
+      }
+    ],
+    "fallbackMessage": "I didn't catch that. You can ask me about available properties, pricing, booking a viewing, or selling your property. Or type 'agent' to speak with a realtor.",
+    "urgencyKeywords": ["urgent", "immediately", "asap", "today", "now", "emergency"]
+  },
+
+  "reminders": {
+    "enabled": true,
+    "rules": [
+      { "id": "viewing_24h", "type": "booking_reminder", "delay": "24h_before", "template": "viewing_reminder" },
+      { "id": "follow_up_7d", "type": "follow_up", "delay": "7d_after", "template": "follow_up_property" },
+      { "id": "re_engage_30d", "type": "re_engagement", "delay": "30d_after", "template": "still_looking" }
+    ]
+  },
+
+  "crm": {
+    "tags": [
+      { "id": "buyer", "name": "Buyer", "color": "green", "autoAssign": "intent = buy" },
+      { "id": "renter", "name": "Renter", "color": "blue", "autoAssign": "intent = rent" },
+      { "id": "seller", "name": "Seller", "color": "purple", "autoAssign": "intent = sell" },
+      { "id": "hot_lead", "name": "Hot Lead", "color": "red", "autoAssign": "budget > 300M" },
+      { "id": "high_value", "name": "High Value", "color": "yellow" }
+    ],
+    "leadStages": ["new", "contacted", "qualified", "converted", "lost"]
+  },
+
+  "metrics": {
+    "kpis": [
+      { "key": "conversations_started", "label": "Conversations", "type": "count" },
+      { "key": "leads_captured", "label": "Leads Captured", "type": "count" },
+      { "key": "bookings_made", "label": "Viewings Scheduled", "type": "count" },
+      { "key": "handoffs_requested", "label": "Agent Handoffs", "type": "count" },
+      { "key": "reminders_sent", "label": "Reminders Sent", "type": "count" },
+      { "key": "reply_rate", "label": "Reply Rate", "type": "rate" }
+    ]
+  },
+
+  "templates": {
+    "welcome": "property_welcome",
+    "booking_confirmation": "property_booking_confirmation",
+    "reminder": "property_reminder",
+    "handoff_notification": "property_handoff",
+    "fallback": "property_fallback"
+  },
+
+  "fallback": {
+    "unknownMessage": "I didn't quite understand. Feel free to ask about properties, pricing, viewing schedules, or selling your home. Or type 'agent' to speak with a realtor.",
+    "errorMessage": "Something went wrong. Please try again, or call us directly on [Phone Number].",
+    "maxRetries": 3
+  }
+}

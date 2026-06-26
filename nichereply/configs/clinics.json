@@ -1,0 +1,229 @@
+{
+  "niche": "clinics",
+  "version": "1.0.0",
+  "displayName": "Clinic & Medical Centre",
+  "description": "Medical clinics, dental practices, eye centres, and health facilities",
+
+  "tone": {
+    "voice": "Professional, calm, and reassuring. Like a caring nurse who explains things clearly.",
+    "formality": "professional",
+    "language": "en"
+  },
+
+  "welcome": {
+    "message": "Welcome to our clinic! 🏥 I'm your virtual health assistant. I can help you book appointments, check our services, answer health questions, or connect you with a doctor. How can I help you today?",
+    "quickReplies": ["Book appointment", "Our services", "Health info"],
+    "autoTag": "patient_inquiry"
+  },
+
+  "faqs": [
+    {
+      "id": "hours",
+      "keywords": ["hours", "open", "close", "time", "when"],
+      "question": "What are your operating hours?",
+      "answer": "We're open Monday to Friday, 7:00 AM to 8:00 PM, and Saturdays 8:00 AM to 5:00 PM. We're closed on Sundays and public holidays. Emergency cases are seen at the nearest hospital.",
+      "followUpOptions": ["Book appointment", "Emergency info"]
+    },
+    {
+      "id": "location",
+      "keywords": ["location", "address", "where", "direction"],
+      "question": "Where are you located?",
+      "answer": "We're located at [Your Address], opposite [Landmark]. We're easily accessible by public transport and have parking available for patients.",
+      "followUpOptions": ["Get directions", "Book appointment"]
+    },
+    {
+      "id": "services_general",
+      "keywords": ["service", "offer", "do you", "treatment", "consult"],
+      "question": "What services do you offer?",
+      "answer": "We offer a wide range of medical services:\n🩺 General consultation & checkups\n💉 Vaccinations & immunizations\n🩸 Lab tests & diagnostics\n👶 Child health & immunizations\n🤰 Antenatal & postnatal care\n🦷 Dental services\n👁️ Eye checkups & glasses\n❤️ Chronic disease management (diabetes, BP)\n\nWhich service are you looking for?",
+      "followUpOptions": ["General consultation", "Dental", "Eye checkup", "Lab tests"]
+    },
+    {
+      "id": "consultation_fee",
+      "keywords": ["consultation", "fee", "cost", "how much", "price", "charge"],
+      "question": "How much is a consultation?",
+      "answer": "Our consultation fees:\n• General consultation: UGX 30,000\n• Dental consultation: UGX 40,000\n• Eye checkup: UGX 35,000\n• Specialist consultation: from UGX 80,000\n\nNHIF and most insurance schemes are accepted. Please bring your insurance card.",
+      "followUpOptions": ["Book consultation", "Insurance info"]
+    },
+    {
+      "id": "insurance",
+      "keywords": ["insurance", "cover", "nhif", "medical cover", "claim"],
+      "question": "Do you accept insurance?",
+      "answer": "Yes, we accept NHIF and most major insurance providers including: AAR, Jubilee, CIC, UAP, GA Insurance, and many more. Please bring your insurance membership card and a valid ID for your visit.",
+      "followUpOptions": ["Book appointment", "List of insurers"]
+    },
+    {
+      "id": "lab_tests",
+      "keywords": ["lab", "test", "blood", "urine", "xray", "scan", "ultrasound"],
+      "question": "What lab tests do you offer?",
+      "answer": "Our in-house lab offers:\n🩸 Blood tests (full hemogram, malaria, typhoid, blood sugar)\n🧪 Urine analysis\n🔬 Stool analysis\n📸 X-ray & ultrasound\n💉 COVID-19 & pregnancy tests\n\nResults for most tests are ready within 2 hours.",
+      "followUpOptions": ["Book lab test", "Request home sample collection"]
+    },
+    {
+      "id": "vaccinations",
+      "keywords": ["vaccine", "vaccination", "immunization", "shot", "jab"],
+      "question": "Do you offer vaccinations?",
+      "answer": "Yes! We offer:\n👶 Child immunizations (BCG, Polio, DPT, Measles, etc.)\n💉 Adult vaccines (flu, hepatitis B, tetanus)\n✈️ Travel vaccines (yellow fever, typhoid, cholera)\n🦟 COVID-19 vaccines\n\nPlease bring your child's immunization card.",
+      "followUpOptions": ["Book vaccination", "Immunization schedule"]
+    },
+    {
+      "id": "appointment_booking",
+      "keywords": ["appointment", "book", "schedule", "see a doctor", "visit"],
+      "question": "How do I book an appointment?",
+      "answer": "Booking is easy! Just let me know:\n1. Which service you need\n2. Your preferred date and time\n3. Whether you're a new or returning patient\n\nYou can also call us directly on [Phone Number].",
+      "followUpOptions": ["Book now", "Call clinic"]
+    },
+    {
+      "id": "home_services",
+      "keywords": ["home", "home visit", "house call", "delivery", "home care"],
+      "question": "Do you offer home visits or delivery?",
+      "answer": "Yes! We offer:\n🏠 Home doctor visits (within 5km radius)\n💊 Medicine delivery to your home\n🩸 Home sample collection for lab tests\n\nAdditional fees apply for home visits.",
+      "followUpOptions": ["Request home visit", "Medicine delivery"]
+    },
+    {
+      "id": "emergency",
+      "keywords": ["emergency", "accident", "urgent", "serious", "bleeding", "pain"],
+      "question": "What should I do in an emergency?",
+      "answer": "If you have a medical emergency, please:\n🚑 Call 911 or 112 immediately\n🏥 Go to the nearest hospital emergency room\n📞 Or call us on [Emergency Number]\n\nOur clinic handles non-emergency cases. For life-threatening emergencies, please go to a hospital.",
+      "followUpOptions": ["Call emergency", "Directions to hospital"]
+    }
+  ],
+
+  "leadQualification": {
+    "enabled": true,
+    "minimumScore": 50,
+    "questions": [
+      {
+        "id": "name",
+        "field": "name",
+        "question": "What's your full name?",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "service_needed",
+        "field": "service_needed",
+        "question": "What service are you looking for?",
+        "type": "select",
+        "options": ["General consultation", "Dental", "Eye checkup", "Lab test", "Vaccination", "Chronic care", "Other"],
+        "required": true
+      },
+      {
+        "id": "new_patient",
+        "field": "is_new_patient",
+        "question": "Are you a new or returning patient?",
+        "type": "select",
+        "options": ["New patient", "Returning patient"],
+        "required": true
+      },
+      {
+        "id": "age",
+        "field": "age",
+        "question": "What is the patient's age?",
+        "type": "number",
+        "required": true
+      },
+      {
+        "id": "phone",
+        "field": "phone",
+        "question": "What's your phone number?",
+        "type": "phone",
+        "required": true
+      }
+    ]
+  },
+
+  "booking": {
+    "enabled": true,
+    "type": "appointment",
+    "fields": [
+      { "id": "service", "label": "Service needed", "type": "select", "options": ["General consultation", "Dental", "Eye checkup", "Lab test", "Vaccination", "Chronic care follow-up"], "required": true },
+      { "id": "doctor", "label": "Preferred doctor (optional)", "type": "select", "options": ["Any available", "Dr. Okello", "Dr. Nakato", "Dr. Wasswa"], "required": false },
+      { "id": "date", "label": "Preferred date", "type": "date", "required": true },
+      { "id": "time", "label": "Preferred time", "type": "time", "required": true },
+      { "id": "notes", "label": "Any special notes (optional)", "type": "text", "required": false }
+    ],
+    "confirmationTemplate": "booking_confirmation"
+  },
+
+  "pricing": {
+    "enabled": true,
+    "triggerKeywords": ["price", "cost", "how much", "fee", "charge", "pay", "expensive"],
+    "response": "Our standard charges:\n🩺 General consultation: UGX 30,000\n🦷 Dental checkup: UGX 40,000\n👁️ Eye test: UGX 35,000\n🩸 Malaria test: UGX 15,000\n💉 Vaccinations: from UGX 20,000\n\nWe accept NHIF and medical insurance. Would you like to book an appointment?",
+    "askForContact": true
+  },
+
+  "handoff": {
+    "enabled": true,
+    "triggers": [
+      {
+        "id": "keyword_doctor",
+        "triggerType": "keyword",
+        "condition": "message contains 'doctor' or 'specialist' or 'talk to doctor' or 'explain'",
+        "description": "Customer asks to speak with a medical professional",
+        "message": "I'll connect you with a medical professional who can help. Please hold on."
+      },
+      {
+        "id": "emergency_triage",
+        "triggerType": "keyword",
+        "condition": "message contains emergency urgency keywords",
+        "description": "Potential medical emergency",
+        "message": "If this is an emergency, please call 911 or go to the nearest hospital immediately. I'll also connect you with our team for guidance."
+      },
+      {
+        "id": "low_confidence",
+        "triggerType": "low_confidence",
+        "condition": "intent confidence below 0.3 after 3 retries",
+        "description": "Bot cannot understand the patient",
+        "message": "I want to make sure you get the right help. Let me connect you with a member of our healthcare team."
+      }
+    ],
+    "fallbackMessage": "I didn't quite get that. You can ask me about our services, pricing, booking, or health information. Or type 'doctor' to speak with a medical professional.",
+    "urgencyKeywords": ["emergency", "urgent", "severe", "bleeding", "unconscious", "heart", "attack", "stroke", "accident", "pain"]
+  },
+
+  "reminders": {
+    "enabled": true,
+    "rules": [
+      { "id": "booking_24h", "type": "booking_reminder", "delay": "24h_before", "template": "appointment_reminder" },
+      { "id": "follow_up_7d", "type": "follow_up", "delay": "7d_after", "template": "follow_up_checkup" },
+      { "id": "medication_refill", "type": "re_engagement", "delay": "28d_after", "template": "medication_refill_reminder" }
+    ]
+  },
+
+  "crm": {
+    "tags": [
+      { "id": "urgent_care", "name": "Urgent Care Needed", "color": "red" },
+      { "id": "new_patient", "name": "New Patient", "color": "blue", "autoAssign": "first_visit" },
+      { "id": "chronic_care", "name": "Chronic Care", "color": "yellow" },
+      { "id": "insurance", "name": "Insurance Patient", "color": "green" },
+      { "id": "vip_patient", "name": "VIP Patient", "color": "purple" }
+    ],
+    "leadStages": ["new", "contacted", "qualified", "converted", "lost"]
+  },
+
+  "metrics": {
+    "kpis": [
+      { "key": "conversations_started", "label": "Conversations", "type": "count" },
+      { "key": "leads_captured", "label": "Patient Inquiries", "type": "count" },
+      { "key": "bookings_made", "label": "Appointments", "type": "count" },
+      { "key": "handoffs_requested", "label": "Doctor Handoffs", "type": "count" },
+      { "key": "reminders_sent", "label": "Reminders Sent", "type": "count" },
+      { "key": "reply_rate", "label": "Reply Rate", "type": "rate" }
+    ]
+  },
+
+  "templates": {
+    "welcome": "clinic_welcome",
+    "booking_confirmation": "clinic_booking_confirmation",
+    "reminder": "clinic_reminder",
+    "handoff_notification": "clinic_handoff",
+    "fallback": "clinic_fallback"
+  },
+
+  "fallback": {
+    "unknownMessage": "I didn't quite understand. Could you try asking about our medical services, booking, or pricing? You can also type 'doctor' to speak with a medical professional.",
+    "errorMessage": "Sorry about that! Please try again, or call us directly on [Phone Number].",
+    "maxRetries": 3
+  }
+}

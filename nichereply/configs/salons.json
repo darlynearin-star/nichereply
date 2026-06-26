@@ -1,0 +1,228 @@
+{
+  "niche": "salons",
+  "version": "1.0.0",
+  "displayName": "Salon & Barber Shop",
+  "description": "Beauty salons, barbershops, nail studios, and spas",
+
+  "tone": {
+    "voice": "Friendly, stylish, and warm. Like a top-tier hairstylist greeting a regular.",
+    "formality": "friendly",
+    "language": "en"
+  },
+
+  "welcome": {
+    "message": "Welcome to our salon! 💇‍♀️ I'm your virtual assistant. I can help you book appointments, check our services and pricing, answer hair & beauty questions, or connect you with a stylist. What can I help you with?",
+    "quickReplies": ["Book an appointment", "Services & pricing", "Gallery"],
+    "autoTag": "new_lead"
+  },
+
+  "faqs": [
+    {
+      "id": "hours",
+      "keywords": ["hours", "open", "close", "time", "when"],
+      "question": "What are your operating hours?",
+      "answer": "We're open Monday to Saturday, 8:00 AM to 7:00 PM. We're closed on Sundays and public holidays. Late appointments available on request!",
+      "followUpOptions": ["Book now", "Call salon"]
+    },
+    {
+      "id": "location",
+      "keywords": ["location", "address", "where", "direction", "near"],
+      "question": "Where are you located?",
+      "answer": "We're located at [Your Address]. We're near [Landmark] with plenty of parking available. You can also find us on Google Maps — just search [Salon Name].",
+      "followUpOptions": ["Get directions", "Book appointment"]
+    },
+    {
+      "id": "walkins",
+      "keywords": ["walk", "walk-in", "walkin", "without", "appointment"],
+      "question": "Do you accept walk-ins?",
+      "answer": "We do accept walk-ins, but appointments are recommended to avoid waiting. Walk-in wait times vary from 15-45 minutes depending on how busy we are.",
+      "followUpOptions": ["Book appointment", "Check wait time"]
+    },
+    {
+      "id": "services",
+      "keywords": ["service", "offer", "do you", "provide", "list"],
+      "question": "What services do you offer?",
+      "answer": "We offer a full range of salon services:\n💇 Hair: cuts, styling, coloring, braiding, treatments, extensions\n💅 Nails: manicure, pedicure, acrylics, gel, nail art\n✨ Facials, waxing, threading, and makeup\n🧖‍♀️ Spa treatments: massages, body scrubs, steam\n\nWhich service are you interested in?",
+      "followUpOptions": ["Hair services", "Nail services", "Spa services"]
+    },
+    {
+      "id": "pricing_hair",
+      "keywords": ["price", "cost", "how much", "rate", "fee", "haircut price"],
+      "question": "How much do haircuts cost?",
+      "answer": "Our haircuts start from UGX 25,000 for a basic cut, UGX 50,000 for styling, and UGX 80,000+ for specialty styles. Pricing depends on hair length and complexity. We'll confirm the exact price during booking.",
+      "followUpOptions": ["Book haircut", "Full price list"]
+    },
+    {
+      "id": "braids",
+      "keywords": ["braid", "braiding", "box braids", "cornrow", "twist", "dread"],
+      "question": "Do you do braiding and how much?",
+      "answer": "Yes! We offer braiding services:\n• Box braids: from UGX 80,000\n• Cornrows: from UGX 40,000\n• Senegalese twists: from UGX 100,000\n• Dreadlocks styling: from UGX 60,000\nPrices vary by length and thickness. Book a consultation for an exact quote!",
+      "followUpOptions": ["Book braiding", "Gallery"]
+    },
+    {
+      "id": "coloring",
+      "keywords": ["color", "dye", "bleach", "highlight", "balayage", "ombre"],
+      "question": "Do you offer hair coloring?",
+      "answer": "Absolutely! Our color services include:\n• Full color: from UGX 80,000\n• Highlights: from UGX 100,000\n• Balayage/Ombre: from UGX 150,000\n• Bleach & tone: from UGX 120,000\n\nWe use professional-grade products. A patch test is required 48 hours before your first color appointment.",
+      "followUpOptions": ["Book coloring", "Consultation"]
+    },
+    {
+      "id": "duration",
+      "keywords": ["how long", "take", "duration", "time needed", "long"],
+      "question": "How long do appointments take?",
+      "answer": "Appointment times vary by service:\n• Basic haircut: 30-45 min\n• Wash & blow-dry: 45-60 min\n• Braiding: 2-4 hours\n• Full color: 1.5-3 hours\n• Manicure: 30-45 min\n• Facial: 45-60 min\n\nWe'll confirm the duration when you book.",
+      "followUpOptions": ["Book appointment", "Services"]
+    },
+    {
+      "id": "products",
+      "keywords": ["product", "sell", "buy", "shampoo", "condition", "recommend"],
+      "question": "Do you sell hair products?",
+      "answer": "Yes! We stock professional hair care products including shampoos, conditioners, styling products, and hair treatments. Our stylists can recommend the best products for your hair type. Visit us or ask for recommendations!",
+      "followUpOptions": ["Get recommendations", "Visit salon"]
+    },
+    {
+      "id": "gift_card",
+      "keywords": ["gift", "voucher", "card", "present", "coupon"],
+      "question": "Do you have gift cards?",
+      "answer": "Yes! We offer gift cards in any amount from UGX 30,000 upwards. Perfect for birthdays, graduations, or any special occasion. You can purchase one at our salon or we can arrange a digital gift card via WhatsApp.",
+      "followUpOptions": ["Buy gift card", "More info"]
+    }
+  ],
+
+  "leadQualification": {
+    "enabled": true,
+    "minimumScore": 40,
+    "questions": [
+      {
+        "id": "name",
+        "field": "name",
+        "question": "What's your name?",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "preferred_service",
+        "field": "preferred_service",
+        "question": "Which service are you interested in?",
+        "type": "select",
+        "options": ["Haircut", "Braiding", "Coloring", "Nails", "Facial / Spa", "Makeup", "Other"],
+        "required": true
+      },
+      {
+        "id": "frequency",
+        "field": "visit_frequency",
+        "question": "How often do you visit a salon?",
+        "type": "select",
+        "options": ["Weekly", "Every 2 weeks", "Monthly", "Every few months", "This is my first time"],
+        "required": false
+      },
+      {
+        "id": "location",
+        "field": "location_area",
+        "question": "What area are you located in?",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "phone",
+        "field": "phone",
+        "question": "What's the best number to reach you on?",
+        "type": "phone",
+        "required": true
+      }
+    ]
+  },
+
+  "booking": {
+    "enabled": true,
+    "type": "appointment",
+    "fields": [
+      { "id": "service", "label": "Service", "type": "select", "options": ["Haircut", "Braiding", "Coloring", "Nails", "Facial", "Spa", "Makeup"], "required": true },
+      { "id": "stylist", "label": "Preferred stylist (optional)", "type": "select", "options": ["Any available", "Grace", "Sarah", "Mary", "James"], "required": false },
+      { "id": "date", "label": "Preferred date", "type": "date", "required": true },
+      { "id": "time", "label": "Preferred time", "type": "time", "required": true }
+    ],
+    "confirmationTemplate": "booking_confirmation"
+  },
+
+  "pricing": {
+    "enabled": true,
+    "triggerKeywords": ["price", "cost", "how much", "rate", "fee", "cheap", "expensive"],
+    "response": "Here's a quick overview:\n💇 Haircuts: from UGX 25,000\n💇‍♀️ Braiding: from UGX 40,000\n🎨 Coloring: from UGX 80,000\n💅 Nails: from UGX 30,000\n✨ Facials: from UGX 50,000\n\nWould you like me to book an appointment for you?",
+    "askForContact": true
+  },
+
+  "handoff": {
+    "enabled": true,
+    "triggers": [
+      {
+        "id": "keyword_agent",
+        "triggerType": "keyword",
+        "condition": "message contains 'agent' or 'human' or 'manager' or 'speak'",
+        "description": "Customer explicitly asks for a human",
+        "message": "No problem! I'll connect you with one of our team members right away."
+      },
+      {
+        "id": "low_confidence",
+        "triggerType": "low_confidence",
+        "condition": "intent confidence below 0.3 after 3 retries",
+        "description": "Bot cannot understand the customer",
+        "message": "I'm sorry, I'm having trouble understanding. Let me connect you with a team member who can help."
+      },
+      {
+        "id": "complaint",
+        "triggerType": "keyword",
+        "condition": "message contains 'complaint' or 'refund' or 'cancel' or 'bad service'",
+        "description": "Customer has a complaint",
+        "message": "I'm sorry to hear that. Let me connect you with our manager who will sort this out."
+      }
+    ],
+    "fallbackMessage": "I'm not sure I understand. Could you rephrase that? Or type 'agent' to speak with a human.",
+    "urgencyKeywords": ["emergency", "urgent", "asap", "now", "immediately", "complaint", "refund"]
+  },
+
+  "reminders": {
+    "enabled": true,
+    "rules": [
+      { "id": "booking_24h", "type": "booking_reminder", "delay": "24h_before", "template": "appointment_reminder" },
+      { "id": "booking_2h", "type": "booking_reminder", "delay": "2h_before", "template": "appointment_reminder_2h" },
+      { "id": "follow_up_3d", "type": "follow_up", "delay": "3d_after", "template": "follow_up" }
+    ]
+  },
+
+  "crm": {
+    "tags": [
+      { "id": "hot_lead", "name": "Hot Lead", "color": "red", "autoAssign": "lead_score > 70" },
+      { "id": "new_client", "name": "New Client", "color": "blue", "autoAssign": "first_visit" },
+      { "id": "regular", "name": "Regular", "color": "green", "autoAssign": "visit_count > 3" },
+      { "id": "vip", "name": "VIP", "color": "purple" },
+      { "id": "price_sensitive", "name": "Price Sensitive", "color": "yellow" }
+    ],
+    "leadStages": ["new", "contacted", "qualified", "converted", "lost"]
+  },
+
+  "metrics": {
+    "kpis": [
+      { "key": "conversations_started", "label": "Conversations", "type": "count" },
+      { "key": "leads_captured", "label": "Leads Captured", "type": "count" },
+      { "key": "bookings_made", "label": "Bookings", "type": "count" },
+      { "key": "handoffs_requested", "label": "Handoffs", "type": "count" },
+      { "key": "reminders_sent", "label": "Reminders Sent", "type": "count" },
+      { "key": "reply_rate", "label": "Reply Rate", "type": "rate" }
+    ]
+  },
+
+  "templates": {
+    "welcome": "salon_welcome",
+    "booking_confirmation": "salon_booking_confirmation",
+    "reminder": "salon_reminder",
+    "handoff_notification": "salon_handoff",
+    "fallback": "salon_fallback"
+  },
+
+  "fallback": {
+    "unknownMessage": "I'm not sure I understand. Could you try asking about our services, pricing, or booking an appointment?",
+    "errorMessage": "Sorry, something went wrong. Please try again or type 'agent' to speak with someone.",
+    "maxRetries": 3
+  }
+}
